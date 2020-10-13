@@ -14,7 +14,7 @@ console.log("To Install All Modules present in package.json : npm i");
 git clone https://github.com/MishraAshish/MERNStack3.git
 
 //To run the node api
-//MERNStack2
+//MERNStack3
 // cd - nodeapi
 // run  - npm i
 // then - npm start
@@ -29,4 +29,6 @@ git clone https://github.com/MishraAshish/MERNStack3.git
 //if you have changes in your machine - so either you resolve that or use 
 //git reset --hard and then take 
 //git pull
+
 //git clean -fd
+//git pull
