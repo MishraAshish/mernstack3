@@ -1,6 +1,8 @@
 //compilation step of javascript it pulls all the var's and function definitions at the top
 //this process is termed as hoisting
 
+//second step is evaluating everything and is termed as interpreter
+
 //variable hoisting
 //var name = undefined; //pulls at the top and assigns undefined as default
 
