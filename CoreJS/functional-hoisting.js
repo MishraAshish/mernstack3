@@ -6,13 +6,14 @@
 //functions in javasript are termed as first class member citizens
 //when function gets hoisted it holds the complete definition of it self
 
-// printName("Randy")
+printName("Randy")
 
-// function printName(name){ //named function
-//     console.log("The name is "+name)
-//     //return name;
-// }
+function printName(name){ //named function
+    console.log("The name is "+name)
+    //return name;
+}
 
+printName("Tim");
 
 // there is no concept of overloading in javascript functions
 

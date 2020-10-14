@@ -1,9 +1,17 @@
 console.log("start")
 
+var name = "Jack"
+var NAme= "Christian"
+
+console.log(name +" "+NAme);
+
 let callbk = function(){
   console.log("second timeout");
 }
 
+let Callbk = function(){
+  console.log("third timeout");
+}
 //event loop : 
   setTimeout(function(){
     console.log("first timeout");
@@ -12,12 +20,9 @@ let callbk = function(){
     },0);	
   },1000);
 
-  setTimeout(callbk
-  ,1000);
+  setTimeout(callbk,1000);
   
-  setTimeout(function(){
-    console.log("third timeout");
-  },1000);
+  setTimeout(Callbk,1000);
 
 console.log("end")
 
