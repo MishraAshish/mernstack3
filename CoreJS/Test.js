@@ -1,3 +1,4 @@
+/*
 console.log("start")
 
 var name = "Jack"
@@ -43,3 +44,23 @@ function sum(x, y) {
 let innerFunc = sum(2);
 //let outPut = innerFunc(3);
 //console.log("outPut ", outPut)
+*/
+
+
+//IIFE : Immediately Invocable Function Expression (Self Invocking Functions)
+
+(function selfExecute(sessionname){
+ 
+  console.log("Current session name is :"+sessionname)
+  globalThis.user = {
+    name : "Jack",
+    age : 21
+  }
+
+})("MERNStack") //invoking immediately //module //module pattern
+
+console.log("user ", globalThis.user);
+
+//selfExecute("MERNStack"); //invocation of function
+//selfExecute("MEANStack");
+//selfExecute("JavaStack");
