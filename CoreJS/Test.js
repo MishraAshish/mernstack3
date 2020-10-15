@@ -48,7 +48,7 @@ let innerFunc = sum(2);
 
 
 //IIFE : Immediately Invocable Function Expression (Self Invocking Functions)
-
+/*
 (function selfExecute(sessionname){
  
   console.log("Current session name is :"+sessionname)
@@ -60,7 +60,15 @@ let innerFunc = sum(2);
 })("MERNStack") //invoking immediately //module //module pattern
 
 console.log("user ", globalThis.user);
-
+*/
 //selfExecute("MERNStack"); //invocation of function
 //selfExecute("MEANStack");
 //selfExecute("JavaStack");
+
+//core javascript, es5, ecmascript5, vanila javascripts
+
+//custom type : Symbol
+let $myvar_newvar = null;
+console.log($myvar_newvar)
+
+console.log(typeof myCustomDataType25) //undefined
