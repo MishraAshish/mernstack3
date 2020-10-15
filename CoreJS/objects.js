@@ -58,3 +58,11 @@ console.log(Object3);
 
 //Object.values
 console.log(Object.values(student))
+
+
+
+//Create a Parent Object : with properties - Balance, AccountNbr, AccountHolderName, function - getAccountNbr()
+//create a two child Objects inherinting the same : CurrentAccount : Address, Partners, DailyLimit, function - getDailyLimit
+//and LoanAccount : LoanAmount, MortgageAddress, function - getMortgageAddress
+
+//Merge all the accounts into - CentralRepo
