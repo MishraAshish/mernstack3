@@ -1,6 +1,7 @@
 //constructor function : these are special type of functions that used to create,
 //class type of behaviour using functions and having prototype chain
 
+
 function user(name, address, age) {
     this.name = name,
     this.age = age,
