@@ -10,7 +10,8 @@ const num = [1,6,9,11,19,21]
 function sum(a,b,c,d,e,f) {
     return a+b+c+d+e+f
 }
-console.log(sum(...num))
+console.log(sum(...num));
+console.log(sum.apply(null, num)); //using apply
 
 //Rest Parameter : This should be the last parameter to recieve in function and is recieved with ...array 
 
@@ -33,3 +34,5 @@ console.log(sumUsingRest(...num))
 //pass this array as spread operator
 //recieve the array as rest parameter and doSum using arr.reduce function
 //print sum - if i choose 3 : [1,2,3] and sum - 6
+
+
