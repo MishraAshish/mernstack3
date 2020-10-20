@@ -24,3 +24,8 @@ console.log(`We have generous student with name ${name}`)
 //         ${name}
 //     </div>
 // </div>`
+
+
+// for (let index = 0; index < 10000; index++) {
+//     console.log(index)    
+// }
