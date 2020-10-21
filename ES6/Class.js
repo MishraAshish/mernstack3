@@ -21,7 +21,12 @@ class Calculator{
 //console.log(calcObj.sum())
 //CalculateArea : RectanlgeArea, Circle (3.14*radius*radius)
 
-module.exports = {
-    Calculator, //classiccal/es5 way :  exporting the module
-    Pie : 3.14
-    }
+// module.exports = {
+//     Calculator, //classiccal/es5 way :  exporting the module
+//     Pie : 3.14
+//     }
+
+
+//export Calculator; //multiple named exports can be done
+//export const pie = 3.141
+//export default Calculator; //only one default export is allowed
