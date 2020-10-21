@@ -10,7 +10,7 @@ class Calculator{
         return this.number1*this.number2;
     }
 
-    sum = ()=>{
+    bmw = ()=>{
         return this.number1+this.number2;
     }
 }
