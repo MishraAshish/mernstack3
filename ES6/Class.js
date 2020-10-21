@@ -15,10 +15,13 @@ class Calculator{
     }
 }
 
-let calcObj = new Calculator(10, 11);
+//let calcObj = new Calculator(10, 11);
 
-console.log(calcObj.multiply())
-console.log(calcObj.sum())
-
-
+//console.log(calcObj.multiply())
+//console.log(calcObj.sum())
 //CalculateArea : RectanlgeArea, Circle (3.14*radius*radius)
+
+module.exports = {
+    Calculator, //classiccal/es5 way :  exporting the module
+    Pie : 3.14
+    }
