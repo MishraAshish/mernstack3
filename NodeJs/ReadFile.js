@@ -1,0 +1,1 @@
+"This file is to be read as synchronous io operation"
