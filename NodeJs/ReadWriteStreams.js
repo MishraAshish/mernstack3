@@ -36,7 +36,7 @@ writerStream.end();
 
 writerStream.on("finish", ()=>{
     console.log("Writing into the file is done")
-    fsObj.readFile('./WriteFile.js','utf8',(err, fileData)=>{ //error first call back : error will always be a first object when executes with node modules
+    fsObj.readFile('./WriteFile.json','utf8',(err, fileData)=>{ //error first call back : error will always be a first object when executes with node modules
 
         console.log("err", err);
         console.log(fileData);
@@ -49,7 +49,7 @@ writerStream.on("error",(erroObj)=>{
 })
 console.log("Read File Ends Using Writer Stream");
 
-fsObj.readFile('./WriteFile.js','utf8',(err, fileData)=>{ //error first call back : error will always be a first object when executes with node modules
+fsObj.readFile('./WriteFile.json','utf8',(err, fileData)=>{ //error first call back : error will always be a first object when executes with node modules
 
     console.log("err", err);
     console.log(fileData);

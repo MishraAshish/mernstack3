@@ -1,0 +1,23 @@
+{
+  "name": "nodeapi",
+  "version": "1.0.0",
+  "description": "learing node api using express and mongoose modules",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MishraAshish/mernstack3.git"
+  },
+  "author": "synergisticit",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MishraAshish/mernstack3/issues"
+  },
+  "homepage": "https://github.com/MishraAshish/mernstack3#readme",
+  "dependencies": {
+    "body-parser": "1.19.0",
+    "express": "4.17.1"
+  }
+}
