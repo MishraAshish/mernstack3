@@ -4,6 +4,7 @@
   "description": "learing node api using express and mongoose modules",
   "main": "server.js",
   "scripts": {
+    "start": "nodemon server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,5 +20,8 @@
   "dependencies": {
     "body-parser": "1.19.0",
     "express": "4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.6"
   }
 }
