@@ -1,1 +1,16 @@
-{"name":"Chris","age":22,"city":"New York","session":"MernStack"}
+{"name":"Chris","age":22,"city":"New York","session":"MernStack",
+    
+    "addresses": {
+        "adress1":{
+            "city": "London"
+        },
+        "adress2":{
+            "city": "PAris"
+        },
+        "adress3":{
+            "city": "NewYork"
+        }
+    },
+    "_id":"unique id"
+}
+
