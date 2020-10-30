@@ -6,10 +6,12 @@ mongooseObj.connect("mongodb://127.0.0.1/mernstack3"); //creates db with name me
 let UserSchema = new schemaObj({
     name: {type:String, required:true},    
     street: String,
-    age:Number
+    age:Number,
+    address:Object,
+    _id:String
 },
 {
-    versionKey: false //false - set to false then it wont create in mongodb
+    //versionKey: false //false - set to false then it wont create in mongodb
 }
 );
 
