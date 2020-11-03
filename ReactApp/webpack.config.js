@@ -1,4 +1,4 @@
-let webpack = require("webpack"),
+let webpack = require("webpack"),//build tool, minification and bundling tool
 path = require("path"),
 DIST_DIR = path.resolve(__dirname,"dist"),
 SRC_DIR = path.resolve(__dirname,"src"),
@@ -54,7 +54,7 @@ webpackConfig = {
         extensions: ['.js', '.jsx']
     },
     
-    devServer: {
+    devServer: { //this is to configure our webpack-dev-server to serve http requests
         contentBase:[
             path.join(DIST_DIR),
             path.join(SRC_DIR),

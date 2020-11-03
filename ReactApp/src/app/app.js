@@ -5,10 +5,13 @@ import React from "react";
 export default class App extends React.Component{//deafult export
 
     render(){
+        let myname = "Donald Trump";
         return(
             <div>
                 <h1>This is App Component</h1> 
                 <strong><i>This message is coming from App Component of React Application</i></strong>
+                <hr/>
+                {myname}
                 
             </div>
         )
