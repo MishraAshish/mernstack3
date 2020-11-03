@@ -6,6 +6,7 @@
   "scripts": {
     "start": "npm run build",
     "build": "webpack -p && copy src\\index.html dist\\index.html && webpack-dev-server",
+    "build-mac": "webpack -p && cp src/index.html dist/index.html && webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "synergisticit",
@@ -22,5 +23,9 @@
     "webpack": "4.44.1",
     "webpack-cli": "3.3.12",
     "webpack-dev-server": "3.11.0"
+  },
+  "dependencies": {
+    "react": "17.0.1",
+    "react-dom": "17.0.1"
   }
 }

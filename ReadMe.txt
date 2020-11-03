@@ -19,6 +19,11 @@ git clone https://github.com/MishraAshish/MERNStack3.git
 // run  - npm i
 // then - npm start
 
+//MERNStack3
+// cd - reactapp
+// run  - npm i
+// then - npm start
+
 // important : npm i  -command is used to install all dependencies mentioned in package.json
 // important : npm i <module name> -command is used to install module in the project
 
