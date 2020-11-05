@@ -57,3 +57,8 @@ export function aFuncComponent(){
         </div>
     )
 };
+
+
+//Create a class component with name Java and have a state with name version, this version should update in every two seconds
+//Create a functional component with name Header and random number as props and prints it, also pass three html elemest h1, h2, h3 with different msgs and show them
+//Import both the components in app component and do the given operations
