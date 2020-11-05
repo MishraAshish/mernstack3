@@ -10,6 +10,6 @@ import {render} from "react-dom"; //named import so we are using it in parenthes
 import App, {somevalue} from "./app/app"; //default
 
 render(
-    <App></App>,//first providing react application to be rendered
+    <App fromIndex={"I am from index"}></App>,//first providing react application to be rendered
     document.getElementById("root") //providing the html element in which we need to inject react application
 )
