@@ -2,7 +2,8 @@
 import "../App.css";
 import React, { Component, PureComponent } from "react";
 import Footer from "./CommonComponents/FooterComponent";
-import { Home } from "./CommonComponents/HomeComponent";
+import Header from "./CommonComponents/HeaderComponent";
+import Home from "./CommonComponents/HomeComponent";
 //export class App extends react.Component{//named export
 
 export default class App extends Component {//deafult export //name of the class should always be capital case
@@ -11,7 +12,8 @@ export default class App extends Component {//deafult export //name of the class
         super();
         this.state = {
             age: 15,
-            name: "Chris"
+            name: "Chris",
+            random: 5001
         }
         this.updateAge();
     }
@@ -31,14 +33,15 @@ export default class App extends Component {//deafult export //name of the class
         // we are going to create html using JSX- Javascript As XML to execute expressions
         return (
             <div>
-                <h1>This is App Component</h1>
+                <Header/>
                 
                 <Home name={this.state.name} age={this.state.age} session={"MernStack"}/>             
-                
+                <b>{this.state.age}</b>               
+
                 <Footer />
                 {/* <strong><i>This message is coming from App Component of React Application</i></strong>
                 <hr />
-                {this.state.age}
+                
 
                 <hr />
                 {`Multiplication ${a * b} and addition is ${a + b} and ${this.props.fromIndex}`}
