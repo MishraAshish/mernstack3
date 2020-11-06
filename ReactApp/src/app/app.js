@@ -1,7 +1,8 @@
 //React application will be this
+import "../App.css";
 import React, { Component, PureComponent } from "react";
 import Footer from "./CommonComponents/FooterComponent";
-
+import { Home } from "./CommonComponents/HomeComponent";
 //export class App extends react.Component{//named export
 
 export default class App extends Component {//deafult export //name of the class should always be capital case
@@ -9,7 +10,8 @@ export default class App extends Component {//deafult export //name of the class
 
         super();
         this.state = {
-            age: 15
+            age: 15,
+            name: "Chris"
         }
         this.updateAge();
     }
@@ -30,7 +32,11 @@ export default class App extends Component {//deafult export //name of the class
         return (
             <div>
                 <h1>This is App Component</h1>
-                <strong><i>This message is coming from App Component of React Application</i></strong>
+                
+                <Home name={this.state.name} age={this.state.age} session={"MernStack"}/>             
+                
+                <Footer />
+                {/* <strong><i>This message is coming from App Component of React Application</i></strong>
                 <hr />
                 {this.state.age}
 
@@ -38,7 +44,7 @@ export default class App extends Component {//deafult export //name of the class
                 {`Multiplication ${a * b} and addition is ${a + b} and ${this.props.fromIndex}`}
                 <hr />
                 {myname}
-                {/* Footer is going to be child component and accepts props as key value*/}
+                Footer is going to be child component and accepts props as key value
                 
                 {
                     this.state.age >= 25 ?
@@ -47,7 +53,7 @@ export default class App extends Component {//deafult export //name of the class
                         <h3>We received as props</h3>
                     </Footer> : 
                     <h1>{"Footer can't be rendered"}</h1>
-                }
+                } */}
             </div>
         )
     }
