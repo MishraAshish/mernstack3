@@ -11,14 +11,14 @@ export default class App extends Component {//deafult export //name of the class
 
         super();
         this.state = {
-            age: 15,
+            age: 100,
             name: "Chris",
             random: 5001
         }
-        this.updateAge();
+        //this.updateAgeParent();
     }
 
-    updateAge = () => {
+    updateAgeParent = () => {
         setInterval(() => {
             this.setState({
                 age: this.state.age + 1
@@ -36,7 +36,7 @@ export default class App extends Component {//deafult export //name of the class
                 <Header/>
                 
                 <Home name={this.state.name} age={this.state.age} session={"MernStack"}/>             
-                <b>{this.state.age}</b>               
+                <b>Parent {this.state.age}</b>               
 
                 <Footer />
                 {/* <strong><i>This message is coming from App Component of React Application</i></strong>
