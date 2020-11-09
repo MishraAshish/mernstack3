@@ -16,7 +16,11 @@ export default class Home extends Component {
             newState: 11
         }       
         //props.age = 35;//this is not allowed as props belong to parent and must not be updated or mutated
-        this.updateAgeHome();
+        //this.updateAgeHome();
+        
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.input = React.createRef();
+        this.inputAge = React.createRef();
     }
 
     updateAgeHome = () => {
@@ -41,6 +45,7 @@ export default class Home extends Component {
 
     textOnChange = (event)=>{
         let target = event.target;
+        
         this.setState({
             textValue : target.value
         })
@@ -56,13 +61,28 @@ export default class Home extends Component {
     //     }
     // }
 
+    btnClick = (event)=>{
+        //alert("Hello! i am clicked!")
+        this.setState({
+            textValue : "MERN Stack"
+        })
+    }
+
+    handleSubmit = (event)=>{
+        this.setState({
+            name: this.input.current.value,
+            age: this.inputAge.current.value
+        })
+
+        event.preventDefault();
+    }
 
     render(){
         console.log("Render Home")
         //This return will always have a parent elemet to wrap everything :JSX exression must have one parent
         //React.Fragment : it passes the condition of one parent but no extra div's get rendered
         return(
-            <React.Fragment>
+            <React.Fragment className="form">
                 {/* <h2>{this.state.newState}</h2> */}
                 <h1>{"Home"}</h1>
                 <label>{this.state.age}</label>
@@ -74,6 +94,26 @@ export default class Home extends Component {
                 {/* <label><b>Child (Home)</b> {this.props.age}</label>                 */}
                 <br/>
                 <input type="text" className="col-md-6 form-control" value={this.state.textValue} onChange={this.textOnChange} ></input>
+                <input type="button" className="button" onClick={this.btnClick} value="Save"></input>
+
+                 {/* below code is used to send data back to parent */}
+                <input type="button" className="button" onClick={()=>this.props.funcAsProp("Joe Biden")} value="Call Back To Parent"></input>
+                <input type="button" className="button" onClick={()=>this.props.funcAsProp(this.state.textValue)} value="Send Dynamic"></input>
+
+                {/* controlled Component implementation using ref keyword */}
+                <form onSubmit={this.handleSubmit}>
+                    <label>
+                    Name:
+                        <input type="text" ref={this.input} placeholder="Please enter name"/>
+                    </label>
+                    
+                    <label>
+                    Age:
+                        <input type="text" ref={this.inputAge} placeholder="Please enter age"/>
+                    </label>
+
+                    <input type="submit" value="Submit" />
+                </form>
             </React.Fragment>
         )
     }

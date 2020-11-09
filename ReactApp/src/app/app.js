@@ -26,6 +26,13 @@ export default class App extends Component {//deafult export //name of the class
         }, 1000);
     }
 
+    callBkFunc4Child = (newValue) =>{
+        //alert("Value from child component " + newValue)
+        this.setState({
+            name: newValue
+        })
+    }
+
     render() {
         let myname = "Biden";
         //console.log("Render Method");
@@ -34,8 +41,8 @@ export default class App extends Component {//deafult export //name of the class
         return (
             <div>
                 <Header/>
-                
-                <Home name={this.state.name} age={this.state.age} session={"MernStack"}/>             
+                <h2>{this.state.name}</h2>
+                <Home name={this.state.name} age={this.state.age} session={"MernStack"} funcAsProp={this.callBkFunc4Child}/>             
                 <b>Parent {this.state.age}</b>               
 
                 <Footer />
