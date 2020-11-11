@@ -18,8 +18,10 @@ export default class Home extends Component {
         //this.updateAgeHome();
         
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.input = React.createRef();
+        this.input = React.createRef(); //as we dont have any html selectors available in react so this provides a reference to html
         this.inputAge = React.createRef();
+        this.inputAddress = React.createRef();
+
         console.log("Constructor")
         //this.input.current.focus();
     }
@@ -30,8 +32,9 @@ export default class Home extends Component {
         console.log("componentDidMount");
         //debugger;
         setTimeout(() => {
-            this.input.current.focus();
-            this.input.current.value = "Added Value in Did Mount";    
+            //this.input.current.focus();
+            //this.input.current.value = "Added Value in Did Mount";   
+            this.inputAddress.current.value = "Randy"; 
         }, 3000); 
     }
     //creation lifecycle method ends
@@ -107,7 +110,8 @@ export default class Home extends Component {
         //try {
             this.setState({
                 name: this.input.current.value,
-                age: this.inputAge.current.value
+                age: this.inputAge.current.value,
+                address: this.inputAddress.current.value
             })
             state = {};
         // } catch (error) {
@@ -137,6 +141,10 @@ export default class Home extends Component {
                         <li>Checkout and pay for items.</li>
                     </ul>
 
+                    <label>
+                    Address:
+                         <input type="text" ref={this.inputAddress} placeholder="Please enter age"/>
+                     </label>
                     <button onClick={()=> this.props.history.push("/about/2500")}>GoTo About Page</button>
                     {/* <br/>
                     <button onClick={()=> this.props.history.push("/hook")}>GoTo React Hooks</button> */}
@@ -182,6 +190,12 @@ export default class Home extends Component {
 //                         <input type="text" ref={this.inputAge} placeholder="Please enter age"/>
 //                     </label>
 
+//                     <label>
+//                     Address:
+//                         <input type="text" ref={this.inputAddress} placeholder="Please enter age"/>
+//                     </label>
+
+
 //                     <input type="submit" value="Submit" />
 //                 </form>
 //             </React.Fragment>
@@ -200,3 +214,11 @@ Home.propTypes = {
     age: PropTypes.number.isRequired,
     session: PropTypes.string    
 }
+
+
+//Practice question
+//1. create a class component with name user and show each and every life cycle present.
+//2. create a state object and with user details like name, age, address
+//3. Read values from textboxes and upon typing change the value //uncontrolled
+//4. create the example of PureComponent, ForceUpdate //Just example
+//5. use ref feature of react to have controlled components //a small form and submit
