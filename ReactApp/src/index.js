@@ -7,9 +7,13 @@ import React from "react"; // importing default class without paranthesis
 import {render} from "react-dom"; //named import so we are using it in parenthesis its not default
 
 //import {App} from "./app/app";
-import App, {somevalue} from "./app/app"; //default
+import App from "./app/app"; //default
+import {Provider} from "react-redux"; //makes store available to each connect present in application
+import store from "./store";
 
 render(
-    <App fromIndex={"I am from index"}></App>,//first providing react application to be rendered
+    <Provider store={store} >
+        <App/> 
+    </Provider>,//first providing react application to be rendered
     document.getElementById("root") //providing the html element in which we need to inject react application
 )

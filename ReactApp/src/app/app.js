@@ -5,10 +5,11 @@ import Footer from "./CommonComponents/FooterComponent";
 import Header from "./CommonComponents/HeaderComponent";
 import Home from "./CommonComponents/HomeComponent";
 import About from "./CommonComponents/AboutComponent";
-//export class App extends react.Component{//named export
+import User from "./ApplicationComponent/Containers/User/UserContainer";
 
 import {BrowserRouter as Router, Route, Switch, Redirect} from "react-router-dom";//hashrouter
 
+//export class App extends react.Component{//named export
 export default class App extends Component {//deafult export //name of the class should always be capital case
     render() {
         let isAdmin = false;//true;
@@ -20,6 +21,7 @@ export default class App extends Component {//deafult export //name of the class
                         <Route path="/about" exact component={About}/>
                         <Route path="/about/:id" exact component={About}/>
                         <Route path="/home" exact component={Home}/>
+                        <Route path="/user" exact component={User}/>
                         <Route path="/" render={()=>(isAdmin ? <Redirect to="/Home" />: <Redirect to="/about" />)} />
                     </Switch>            
                 <Footer />
