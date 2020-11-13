@@ -21,4 +21,4 @@ let mapStateToProps = (state)=>
     }
 }
 
-export default connect(mapStateToProps, null)(Header);
+export default connect(mapStateToProps, null)(Header); //subscriber only component

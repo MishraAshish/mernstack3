@@ -7,8 +7,7 @@ export default class User extends Component{
             userName : props.user.userName,
             password : props.user.password,
             street : props.user.street,
-            mobile : props.user.mobile,
-            _id : props.user._id
+            mobile : props.user.mobile
         }; //userName, password, email, mobile, street
     }
 
@@ -42,6 +41,18 @@ export default class User extends Component{
         this.props.loginUser(this.state);
     }
     
+    //as we update the state in user reducer we need to update component when we recive it as props 
+    //once broadcated by store
+    componentWillReceiveProps(nextProps){
+        console.log("next props", nextProps);
+        this.setState({
+            userName: nextProps.user.userName,
+            password: nextProps.user.password,
+            street: nextProps.user.street,
+            mobile: nextProps.user.mobile,
+            _id:nextProps.user._id
+        })
+    }
 
     render(){
         return(
@@ -72,7 +83,7 @@ export default class User extends Component{
                             placeholder="Mobile" maxLength="11"
                             onChange={this.onChangeText} />
                     </div>
-                    {this.state._id}
+                    {this.props.user._id}
                     <input type="button" className={"btn btn-primary col-md-2 saveUser"} value={"SignIn-Up"} onClick={this.LoginUser}/>
                 </div>
             </section>

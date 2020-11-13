@@ -4,7 +4,7 @@
 import {connect} from "react-redux";
 
 import UserComponent from "../../Components/User/UserComponent";
-import {addUserToStore} from "../../../State/Actions";
+import {addUserToStore, singInUpUser} from "../../../State/Actions";
 
 //subscriber : allows us to access data from store and reducer state
 let mapStateToProps = (state) => { //map store to props ->  state <==> store
@@ -16,8 +16,11 @@ let mapStateToProps = (state) => { //map store to props ->  state <==> store
 //allows us to make able to dispatch actions from event raised in component
 let mapDispatchToProps = (dispatch) => { 
     return {
+        // loginUser : (userObject)=>{
+        //     dispatch(addUserToStore(userObject))
+        //}
         loginUser : (userObject)=>{
-            dispatch(addUserToStore(userObject))
+            dispatch(singInUpUser(userObject))
         }
     }
 }

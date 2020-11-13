@@ -9,7 +9,7 @@ import {render} from "react-dom"; //named import so we are using it in parenthes
 //import {App} from "./app/app";
 import App from "./app/app"; //default
 import {Provider} from "react-redux"; //makes store available to each connect present in application
-import store from "./store";
+import store from "./store"; //redux object to manage data
 
 render(
     <Provider store={store} >

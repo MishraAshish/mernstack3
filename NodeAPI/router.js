@@ -2,7 +2,37 @@ let express = require("express");
 //let router = express.Router({caseSensitive:true});
 let router = express.Router();
 let testUserDateModel = require("./DataModel/TestUserDataModel");
+let UserModel = require("./DataModel/UserDataModel");
 
+router.post('/api/signinupuser',(req, res)=>{
+    console.log(req.body);//json object that has been passed from user component state and then signinup funciton in action
+    
+    UserModel.findOne({userName: req.body.userName}, (err, userObject) => { //error first callback
+        if (err != null) { //if error occurs at the time of user object search
+            console.log("Error :", err);
+            res.send({"Err":err});
+        } else if (userObject) { //user already exists - sign in
+            res.json(userObject);
+        } else{            
+            let signUpObjUserMongo = new UserModel(req.body); //auto assigns value to
+            
+            // let signObjForMongo = new signInModel({
+            //     userName: req.body.userName,
+            //     password: req.body.password,
+            //     street: req.body.street,
+            //     mobile : req.body.mobile
+            //   });
+
+            signUpObjUserMongo.save((err, data, next)=>{//data : the same user object that saved and contains mongodb id
+                if (err) {
+                    res.send("Error Occurred While Signing Up User "+ err);
+                } else{     
+                    res.json(data);
+                }
+            });
+        }
+    })
+})
 
 router.get('/saveTestUser', function (req, res) { 
     //http://localhost:9090/saveTestUser?name=Tim&age=16&street=34%20street%20paris%20france&address.address1=%22my%20new%20address%22

@@ -3,11 +3,11 @@ import * as ActionTypes from "./ActionType";
 
 let INITIAL_STATE = {
     user : {
-        userName : "Tim",
-        password : "Password",
-        street : "Wall Street",
-        mobile : "911",
-        _id:""
+        userName : "",
+        password : "",
+        street : "",
+        mobile : "",
+        _id: ""
     }
 }
 
@@ -17,7 +17,11 @@ let UserReducer = (previousState = INITIAL_STATE, action) => {
             case ActionTypes.AddUserToStore:
                 console.log("Adduser To Store Reducer", action)
                 //we will create a new state using payload passed from user component and container
-                return {...previousState, user:action.payload.user};
+                //for every action dispatch reducer generates a new state
+                // let newState = Object.assign(previousState);
+                // newState.user = action.payload.user;
+
+                return {...previousState, user:action.payload.user}; //returns a new state
         
             default:
                 return previousState;
