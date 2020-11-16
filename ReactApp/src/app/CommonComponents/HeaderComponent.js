@@ -8,6 +8,7 @@ const Header = (props)=>{
             <h1>{props.user.userName}</h1>
             <NavLink to="/home" className="button" activeClassName="success" >Home </NavLink> 
             <NavLink to="/user" className="button" activeClassName="success" >User </NavLink> 
+            <NavLink to="/product" className="button" activeClassName="success" >Product </NavLink> 
             <NavLink to="/about" className="button" activeClassName="success">About  </NavLink>
         </React.Fragment>
     )

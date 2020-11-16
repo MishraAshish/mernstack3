@@ -3,7 +3,36 @@ let express = require("express");
 let router = express.Router();
 let testUserDateModel = require("./DataModel/TestUserDataModel");
 let UserModel = require("./DataModel/UserDataModel");
+let ProductModel = require("./DataModel/ProductDataModel");
 
+//save product
+router.post('/api/saveProduct',(req, res)=>{
+    console.log(req.body);//json object that has been passed from user component state and then signinup funciton in action
+    
+    let ProductObjMongo = new ProductModel(req.body); //body : JSON Object passed from UI
+
+    ProductObjMongo.save((err, data, next)=>{//data : the product with _id is returned
+        if (err) {
+            res.send("Error Occurred While Saving Product "+ err);
+        } else{     
+            res.json(data);
+        }
+    });
+})
+
+router.get('/api/fetchproducts',(req, res)=>{
+
+    ProductModel.find((err, products)=>{
+        if (err) {
+            res.send("Error Occurred While Fetching Products "+ err);
+        } else{     
+            res.send(products);
+        }
+    })
+})
+
+
+//user api's start here
 router.post('/api/signinupuser',(req, res)=>{
     console.log(req.body);//json object that has been passed from user component state and then signinup funciton in action
     
