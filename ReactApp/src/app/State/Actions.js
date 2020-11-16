@@ -64,9 +64,8 @@ export const fetchProducts = () => ({
                 ).then(responseProducts => {
                     // want to updatePath for the route here:
                     //dispatch(updatePath('/'));
-                    console.log("responseProducts ", responseProducts)
+                    //console.log("responseProducts ", responseProducts)
                     resolve(responseProducts)
-                    //return responseProducts;
                 })
                 .catch(error => {
                     reject(error);

@@ -15,7 +15,6 @@ let INITIAL_STATE = {
 export default function ProductReducer(state=INITIAL_STATE, action)
 {
     console.log("Product Reducer :",state);
-    debugger;
     switch (action.type) {
 
         case "AddProducts" :
