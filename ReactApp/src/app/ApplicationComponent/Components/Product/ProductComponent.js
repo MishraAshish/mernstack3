@@ -1,5 +1,6 @@
 import React from "react";
 import DisplayProducts from "../../Containers/Product/DisplayProductContainer";
+import DisplayProductsHooks from "./DisplayProductComponentHooks";
 
 export default class Product extends React.Component {
     constructor(props, context){
@@ -121,6 +122,8 @@ export default class Product extends React.Component {
                 <br/>
                 <hr/>
                 <DisplayProducts/>
+                <h5>Below Data is from DisplayProductsHooks</h5>
+                <DisplayProductsHooks />
             </section>
         )
     }
