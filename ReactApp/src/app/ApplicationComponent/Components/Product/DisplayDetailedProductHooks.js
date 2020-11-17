@@ -1,4 +1,4 @@
-import React,{ useState } from "react";
+import React, {useState } from "react";
 
 let DisplayDetailedProduct = (props)=> {
     let product = props.product;
@@ -16,13 +16,16 @@ let DisplayDetailedProduct = (props)=> {
 
     //initializing state using useState hook, which eventually returns a function where we can pass the updated state 
     let [showDetails, showHideDetails] = useState(false); //
+    let [user, changeUserName] = useState({name:"Jack",age:25}); //
 
     let onClick = (evt) =>{
-        showHideDetails(!showDetails)
+        showHideDetails(!showDetails);
+        changeUserName({name:"Chris", age:15});
     }
 
     return(
         <React.Fragment>
+            <h5>{user.name +" "+ user.age}</h5>
             <ul className={"product"}>
                 {/* <li onClick={this.showHideDetails}> */}
                 <li onClick={onClick}>
@@ -36,7 +39,7 @@ let DisplayDetailedProduct = (props)=> {
                         <li>{product.color}</li>
                     </ul>
                     :
-                    ""}
+                    "Show DEtails is set to false"}
                 </li>
             </ul>
         </React.Fragment>
