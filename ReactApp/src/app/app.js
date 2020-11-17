@@ -8,6 +8,7 @@ import About from "./CommonComponents/AboutComponent";
 import User from "./ApplicationComponent/Containers/User/UserContainer";
 import Product from "./ApplicationComponent/Containers/Product/ProductContainer";
 import DisplayProduct from "./ApplicationComponent/Containers/Product/DisplayProductContainer";
+import ProductHooks from "./ApplicationComponent/Components/Product/ProductComponentHooks";
 
 import {BrowserRouter as Router, Route, Switch, Redirect} from "react-router-dom";//hashrouter
 
@@ -25,6 +26,7 @@ export default class App extends Component {//deafult export //name of the class
                         <Route path="/home" exact component={Home}/>
                         <Route path="/user" exact component={User}/>
                         <Route path="/product" exact component={Product}/>
+                        <Route path="/productHooks" exact component={ProductHooks}/>
                         <Route path="/display" exact component={DisplayProduct}/>
                         <Route path="/" render={()=>(isAdmin ? <Redirect to="/Home" />: <Redirect to="/about" />)} />
                     </Switch>            
