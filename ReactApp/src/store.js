@@ -5,6 +5,7 @@ import promise from "redux-promise-middleware"; //used to make server call async
 
 import user from "./app/State/UserReducer";
 import product from "./app/State/ProductReducer";
+import cart from "./app/State/CartReducer";
 
 let logger = () => (next) => (action) => {
     //currying in javasript where we pass function as input and recieve function as output
@@ -16,7 +17,8 @@ let logger = () => (next) => (action) => {
 export default createStore(
     combineReducers({
         user, //short hand when variable value and key name are same
-        product
+        product,
+        cart
     }),
     {}, //intial state for store states
     applyMiddleware(logger, thunk, promise) //middle wares tp used at various places like action.js
