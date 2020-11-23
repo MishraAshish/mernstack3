@@ -1,7 +1,6 @@
 import React from 'react';  
 
 export default function About (props){  
-    
     let param = props.match && props.match.params ? props.match.params["id"] : "No Params"; //reading the param in path /about/:id
     //console.log(param);
     return (

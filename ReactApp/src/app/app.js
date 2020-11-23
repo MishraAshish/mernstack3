@@ -1,22 +1,70 @@
 //React application will be this
 import "../App.css";
 import React, { Component, PureComponent } from "react";
-import Footer from "./CommonComponents/FooterComponent";
-import Header from "./CommonComponents/HeaderComponent";
-import Home from "./CommonComponents/HomeComponent";
-import About from "./CommonComponents/AboutComponent";
-import User from "./ApplicationComponent/Containers/User/UserContainer";
-import Product from "./ApplicationComponent/Containers/Product/ProductContainer";
+//import Footer from "./CommonComponents/FooterComponent";
+//import Header from "./CommonComponents/HeaderComponent";
+//import Home from "./CommonComponents/HomeComponent";
+//import About from "./CommonComponents/AboutComponent";
+//import NotFound from "./CommonComponents/NotFoundComponent";
+//import User from "./ApplicationComponent/Containers/User/UserContainer";
+//import Product from "./ApplicationComponent/Containers/Product/ProductContainer";
 import Cart from "./ApplicationComponent/Containers/Cart/CartContainer";
 import DisplayProduct from "./ApplicationComponent/Containers/Product/DisplayProductContainer";
+import Checkout from "./ApplicationComponent/Containers/Checkout/CheckoutContainer";
 import ProductHooks from "./ApplicationComponent/Components/Product/ProductComponentHooks";
+import CouponHooks from "./ApplicationComponent/Components/Coupon/CouponComponent";
 
 import {BrowserRouter as Router, Route, Switch, Redirect} from "react-router-dom";//hashrouter
+import Loadable from "react-loadable"; // Importing Loadable to be used for lazy loading
+
+// functional component, used as placeholder
+//when lazy loaded modules delayed
+function Loading() {
+    return (
+        <div>
+            Loading Project...
+        </div>
+    )
+}
+const Home = Loadable({
+    loader: () => import("./CommonComponents/HomeComponent"),
+    loading: Loading,
+});
+
+const Footer = Loadable({
+    loader: () => import("./CommonComponents/FooterComponent"),
+    loading: Loading,
+});
+
+const Header = Loadable({
+    loader: () => import("./CommonComponents/HeaderComponent"),
+    loading: Loading,
+});
+
+const About = Loadable({
+    loader: () => import("./CommonComponents/AboutComponent"),
+    loading: Loading,
+});
+
+const NotFound = Loadable({
+    loader: () => import("./CommonComponents/NotFoundComponent"),
+    loading: Loading,
+});
+
+const User = Loadable({
+    loader: () => import("./ApplicationComponent/Containers/User/UserContainer"),
+    loading: Loading,
+});
+
+const Product = Loadable({
+    loader: () => import("./ApplicationComponent/Containers/Product/ProductContainer"),
+    loading: Loading,
+});
 
 //export class App extends react.Component{//named export
 export default class App extends Component {//deafult export //name of the class should always be capital case
     render() {
-        let isAdmin = false;//true;
+        let isAdmin = true;//false;
         // we are going to create html using JSX- Javascript As XML to execute expressions
         return (
             <Router>
@@ -30,7 +78,11 @@ export default class App extends Component {//deafult export //name of the class
                         <Route path="/productHooks" exact component={ProductHooks}/>
                         <Route path="/display" exact component={DisplayProduct}/>
                         <Route path="/cart" exact component={Cart}/>
-                        <Route path="/" render={()=>(isAdmin ? <Redirect to="/Home" />: <Redirect to="/about" />)} />
+                        <Route path="/coupon" exact component={CouponHooks}/>
+                        <Route path="/NotFound" component={NotFound} />
+                        <Route path="/checkout" component={Checkout} />
+                        <Route path="/" render={()=>(isAdmin ? <Redirect to="/Home" />: <Redirect to="/NotFound" />)} />
+                        
                     </Switch>            
                 <Footer />
             </Router>
