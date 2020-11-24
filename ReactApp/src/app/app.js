@@ -13,6 +13,7 @@ import DisplayProduct from "./ApplicationComponent/Containers/Product/DisplayPro
 import Checkout from "./ApplicationComponent/Containers/Checkout/CheckoutContainer";
 import ProductHooks from "./ApplicationComponent/Components/Product/ProductComponentHooks";
 import CouponHooks from "./ApplicationComponent/Components/Coupon/CouponComponent";
+import {AtmDispenser} from "./CommonComponents/AtmDispenser";
 
 import {BrowserRouter as Router, Route, Switch, Redirect} from "react-router-dom";//hashrouter
 import Loadable from "react-loadable"; // Importing Loadable to be used for lazy loading
@@ -81,6 +82,7 @@ export default class App extends Component {//deafult export //name of the class
                         <Route path="/coupon" exact component={CouponHooks}/>
                         <Route path="/NotFound" component={NotFound} />
                         <Route path="/checkout" component={Checkout} />
+                        <Route path="/atmdispenser" component={AtmDispenser} />
                         <Route path="/" render={()=>(isAdmin ? <Redirect to="/Home" />: <Redirect to="/NotFound" />)} />
                         
                     </Switch>            
